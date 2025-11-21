@@ -86,7 +86,7 @@ function LoginRegister() {
                   : "Register"
                 : authLoading === "login"
                 ? "Logging in..."
-                : "Login"}
+                : "Log In"}
             </Button>
             <Button
               type="button"

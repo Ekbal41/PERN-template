@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { DoorOpen, Key } from "lucide-react";
 import api from "@/api/axios";
 import { toast } from "sonner";
+import Avatar from "boring-avatars";
 import {
   Card,
   CardContent,
@@ -46,14 +47,17 @@ export default function Account() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-6">
-      <div className="flex justify-between items-center gap-4 flex-wrap">
+    <div className="space-y-6">
+      <div
+        className="w-full rounded-xl p-6 bg-gradient-to-br from-indigo-500/10
+        via-purple-500/10 to-pink-500/10 flex items-center justify-between backdrop-blur-sm 
+        transition-all hover:shadow-md flex-wrap gap-4"
+      >
         <div className="flex items-center gap-4">
-          <img
-            src={
-              "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small_2x/default-avatar-icon-of-social-media-user-vector.jpg"
-            }
-            alt="User Avatar"
+          <Avatar
+            name={user?.name}
+            variant="beam"
+            square
             className="h-14 w-14 rounded-lg"
           />
           <div>

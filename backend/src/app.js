@@ -49,7 +49,7 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api/v1", allRouter);
+app.use("/", allRouter);
 app.use("/", sUI.serve, sUI.setup(sFile));
 app.use(errorHandler);
 
