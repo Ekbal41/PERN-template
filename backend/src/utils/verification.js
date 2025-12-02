@@ -11,10 +11,10 @@ function generateEmailVerificationToken(userId) {
 
 async function sendEmailVerificationLinkEmail({ userEmail, userName, userId }) {
   const token = generateEmailVerificationToken(userId);
-  const verificationLink = `${process.env.APP_URL}/verify/email-verification?token=${token}`;
+  const verificationLink = `${process.env.APP_URL}/verify/email?token=${token}`;
   const done = await sendEmail({
     sendTo: userEmail,
-    senderName: "Dokanify",
+    senderName: process.env.PROJECT_NAME || "PERN App",
     emailSubject: "Verify Your Email Address",
     htmlTemplate: "verify-email.html",
     templateData: {

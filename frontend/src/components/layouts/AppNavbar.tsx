@@ -11,8 +11,8 @@ export default function Navbar() {
       <nav className="max-w-4xl w-full mx-auto flex items-center justify-between">
         <ProjectLogo />
         <div className="flex gap-3">
-          <ModeToggle />
           <NotificationBell types="user,system" />
+          <ModeToggle />
           <Link to="/account">
             <Button size={"icon"} variant="outline" aria-label="Account">
               <CircleUser />

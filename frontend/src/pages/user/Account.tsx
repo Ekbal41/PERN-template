@@ -48,37 +48,35 @@ export default function Account() {
 
   return (
     <div className="space-y-6">
-      <div
-        className="w-full rounded-xl p-6 bg-gradient-to-br from-indigo-500/10
-        via-purple-500/10 to-pink-500/10 flex items-center justify-between backdrop-blur-sm 
-        transition-all hover:shadow-md flex-wrap gap-4"
-      >
-        <div className="flex items-center gap-4">
-          <Avatar
-            name={user?.name}
-            variant="beam"
-            square
-            className="h-14 w-14 rounded-lg"
-          />
-          <div>
-            <h1 className="text-2xl font-semibold">{user?.name}</h1>
-            <p className="text-muted-foreground">{user?.email}</p>
+      <Card>
+        <CardContent className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Avatar
+              name={user?.name}
+              variant="beam"
+              square
+              className="h-14 w-14 rounded-lg"
+            />
+            <div>
+              <h1 className="text-2xl font-semibold">{user?.name}</h1>
+              <p className="text-muted-foreground">{user?.email}</p>
+            </div>
           </div>
-        </div>
-        <Button
-          variant="destructive"
-          onClick={logout}
-          className="flex items-center gap-2 w-full md:w-fit"
-        >
-          {authLoading === "logout" ? (
-            "Logging Out"
-          ) : (
-            <>
-              <DoorOpen className="h-4 w-4" /> Log Out
-            </>
-          )}
-        </Button>
-      </div>
+          <Button
+            variant="destructive"
+            onClick={logout}
+            className="flex items-center gap-2 w-full md:w-fit"
+          >
+            {authLoading === "logout" ? (
+              "Logging Out"
+            ) : (
+              <>
+                <DoorOpen className="h-4 w-4" /> Log Out
+              </>
+            )}
+          </Button>
+        </CardContent>
+      </Card>
       {authLoading === "user" ? (
         <div>
           <AccountSkeleton />

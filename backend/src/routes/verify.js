@@ -4,9 +4,9 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/email-verification", verifyC.emailVerification);
+router.get("/email", verifyC.emailVerification);
 router.get(
-  "/send-email-verification-link",
+  "/email/send-verification-link",
   auth,
   verifyC.sendEmailVerificationLink
 );

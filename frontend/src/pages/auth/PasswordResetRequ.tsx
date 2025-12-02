@@ -11,7 +11,7 @@ export default function PasswordResetRequest() {
   const navigate = useNavigate();
   const mutation = useMutation({
     mutationFn: async (data: { email: string }) => {
-      const res = await api.post("/auth/send-password-reset-link", data);
+      const res = await api.post("/auth/email/send-verification-link", data);
       return res.data;
     },
     onSuccess: (data) => {

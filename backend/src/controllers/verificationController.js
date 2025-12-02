@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const prisma = require("../config/prisma");
-const { sendEmailVerificationLinkEmail } = require("../utils/verification");
 const { redirectWithMsg } = require("../utils/redirect");
 const { addNotification } = require("./notificationController");
+const { sendEmailVerificationLinkEmail } = require("../utils/verification");
 
 exports.emailVerification = async (req, res) => {
   /* #swagger.tags = ['Verification']*/
